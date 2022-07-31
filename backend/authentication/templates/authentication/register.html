@@ -1,0 +1,47 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card">
+	<div class="card__head">
+		<h1>{{ lang.register_head }}</h1>
+	</div>
+	<div class="card__body">
+		<form class="form-group">
+			{% csrf_token %}
+			<div class="input-field">
+				<label for="username">{{ lang.register_username_label }}</label>
+				<input type="text" name="username" placeholder="{{ lang.register_username_placeholder }}" />
+			</div>
+			<div class="input-field">
+				<label for="email">{{ lang.register_email_label }}</label>
+				<input type="email" name="email" placeholder="{{ lang.register_email_placeholder }}" />
+			</div>
+			<div class="input-field">
+				<label for="password">{{ lang.register_password_label }}</label>
+				<input type="password" name="password" placeholder="{{ lang.register_password_placeholder }}" />
+			</div>
+
+			<input type="submit" class="button" value="{{ lang.register_submit }}" />
+		</form>
+	</div>
+	<div class="card__footer">
+		<a href="/auth/login">{{ lang.have_account }}</a>
+	</div>
+</div>
+{% endblock %}
+	
+{% block javascript %}
+	<script>
+		const langUsernameLabel = "{{ lang.register_username_label }}";
+		const langEmailLabel = "{{ lang.register_email_label }}";
+		const langPasswordLabel = "{{ lang.register_password_label }}";
+
+		const formURL = "{% url 'auth-create-account' %}";
+
+		const errorEmptyFields = "{{ lang.error_empty_fields }}";
+		const errorAlreadyExists = "{{ lang.error_already_exists }}";
+		const errorInvalidPassword = "{{ lang.error_invalid_password }}";
+	</script>
+	<script src="{% static 'authentication/js/register.js' %}"></script>
+{% endblock %}

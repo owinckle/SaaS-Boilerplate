@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{{ page_title }}</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="{% static 'pages/css/main.css' %}" />
+
+	{% block stylesheets %}{% endblock %}
+
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body class="{% if light_theme %}light-theme{% endif %}">
+	<!-- Navbar -->
+	<div class="nav-container">
+		<div class="site-title">{{ settings.SITE_NAME }}</div>
+		<nav>
+			<ul>
+				<li>
+					<a href="{% url 'pages-home' %}#" data-section="hero" />Home</a>
+				</li>
+				<li>
+					<a href="{% url 'pages-home' %}#features" data-section="features" />Features</a>
+				</li>
+				<li>
+					<a href="{% url 'pages-home' %}#pricing" />Pricing</a>
+				</li>
+				<li>
+					<a href="javascript:void()" />Blog</a>
+				</li>
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+				<li>
+					<a class="button" href="javascript:void()" />Get started</a>
+				</li>
+				<li>
+					<a class="button" href="javascript:void()" />Log in</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<!-- End Navbar -->
+
+	<div class="content-container">
+		{% block content %}{% endblock %}
+	</div>
+
+	<footer>
+		<div class="footer__site-identity">
+			<div class="footer__site-name">{{ settings.SITE_NAME }}</div>
+			<div class="footer__site-slogan">Lorem ipsum dolor sit amet.</div>
+		</div>
+		<div class="footer__links">
+			<a href="javascript:void()">Link #1</a>
+			<a href="javascript:void()">Link #2</a>
+			<a href="javascript:void()">Link #3</a>
+			<a href="javascript:void()">Link #4</a>
+			<a href="javascript:void()">Link #5</a>
+		</div>
+		<div class="footer__links">
+			<a href="javascript:void()">Terms of service</a>
+			<a href="javascript:void()">Privacy policy</a>
+		</div>
+		<div class="footer__socials">
+			<img src="{% static 'pages/img/twitter.png' %}" alt="Twitter logo" />
+			<img src="{% static 'pages/img/instagram.png' %}" alt="Instagram logo" />
+			<img src="{% static 'pages/img/facebook.png' %}" alt="Facebook logo" />
+		</div>
+	</footer>
+
+	<script src="{% static 'pages/js/main.js' %}"></script>
+	{% block javascript %}{% endblock %}
+</body>
+
+</html>

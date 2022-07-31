@@ -1,0 +1,44 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+
+{% block content %}
+	<div class="card">
+		<div class="card__head">
+			<h1>{{ lang.login_head }}</h1>
+			<h2>{{ lang.login_sub }}</h2>
+		</div>
+		<div class="card__body">
+			<form class="form-group">
+				{% csrf_token %}
+
+				<div class="input-field">
+					<label for="email">{{ lang.login_email_label }}</label>
+					<input type="email" name="email" placeholder="{{ lang.login_email_placeholder }}" />
+				</div>
+				<div class="input-field">
+					<label for="password">{{ lang.login_password_label }}</label>
+					<input type="password" name="password" placeholder="{{ lang.login_password_placeholder }}" />
+				</div>
+				<a href="#">{{ lang.forgot_password }}</a>
+
+				<input type="submit" class="button" value="{{ lang.login_submit }}" />
+			</form>
+		</div>
+		<div class="card__footer">
+			<span>{{ lang.need_account }} <a href="/auth/register">{{ lang.need_account_cta }}</a></span>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+	<script>
+		const langEmailLabel = "{{ lang.login_email_label }}";
+		const langPasswordLabel = "{{ lang.login_password_label }}";
+
+		const formURL = "{% url 'auth-authenticate' %}";
+
+		const errorEmptyFields = "{{ lang.error_empty_fields }}";
+		const errorCredentials = "{{ lang.error_credentials }}";
+	</script>
+	<script src="{% static 'authentication/js/login.js' %}"></script>
+{% endblock %}
