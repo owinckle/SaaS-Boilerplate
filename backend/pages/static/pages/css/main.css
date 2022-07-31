@@ -158,15 +158,16 @@ body.light-theme {
 
 .content-container > section {
 	position: relative;
-	padding: 60px 250px;
+	padding: 60px 250px 0;
 }
 
 /* Footer */
 footer {
-	padding: 150px 250px;
+	padding: 60px 250px;
 	background: var(--bg2);
 	display: flex;
 	justify-content: space-between;
+	margin-top: 60px;
 }
 
 footer .footer__site-identity .footer__site-name {

@@ -3,6 +3,7 @@
 
 {% block stylesheets %}
 <link rel="stylesheet" href="{% static 'pages/css/home.css' %}" />
+<link rel="stylesheet" href="{% static 'pages/css/home-responsive.css' %}" />
 {% endblock %}
 
 {% block content %}
@@ -73,6 +74,35 @@
 					dui.</p>
 			</div>
 			<img src="https://i.gyazo.com/6923ac6be18ce843b2d6cb2b4d399c60.png" />
+		</div>
+	</section>
+
+	<section id="pricing">
+		<div class="card">
+			<div class="card__pane">
+				<div class="pane__title">Free</div>
+				<div class="pane__price">0€</div>
+				<div class="pane__feature">
+					<div class="pane__feature__icon material-icons">done</div>
+					<div class="pane__feature__name">Unlimitted newsletters</div>
+				</div>
+				<div class="pane__feature">
+					<div class="pane__feature__icon material-icons">done</div>
+					<div class="pane__feature__name">Category management</div>
+				</div>
+			</div>
+			<div class="card__pane">
+				<div class="pane__title">Premium</div>
+				<div class="pane__price">19.99€</div>
+				<div class="pane__feature">
+					<div class="pane__feature__icon material-icons">done</div>
+					<div class="pane__feature__name">Unlimitted newsletters</div>
+				</div>
+				<div class="pane__feature">
+					<div class="pane__feature__icon material-icons">done</div>
+					<div class="pane__feature__name">Category management</div>
+				</div>
+			</div>
 		</div>
 	</section>
 {% endblock %}

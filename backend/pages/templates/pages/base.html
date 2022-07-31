@@ -11,6 +11,7 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="{% static 'pages/css/main.css' %}" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	{% block stylesheets %}{% endblock %}
 
@@ -31,7 +32,7 @@
 					<a href="{% url 'pages-home' %}#features" data-section="features" />Features</a>
 				</li>
 				<li>
-					<a href="{% url 'pages-home' %}#pricing" />Pricing</a>
+					<a href="{% url 'pages-home' %}#pricing" data-section="pricing" />Pricing</a>
 				</li>
 				<li>
 					<a href="javascript:void()" />Blog</a>

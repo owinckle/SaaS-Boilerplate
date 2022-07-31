@@ -15,7 +15,9 @@ $(window).scroll(() => {
 	sections.forEach((section) => {
 		const sectionTop = section.offsetTop;
 		if ($(window).scrollTop() >= sectionTop) {
-			currentSection = section.getAttribute("id");
+			if (section.getAttribute("id")) {
+				currentSection = section.getAttribute("id");
+			}
 		}
 	});
 
@@ -41,7 +43,6 @@ $(window).scroll(() => {
 		const link = item.firstElementChild.getAttribute("href").replace("#", "");
 		if (link == currentFeature) {
 			item.classList.add("active");
-			found = true;
 		} else {
 			item.classList.remove("active");
 		}
