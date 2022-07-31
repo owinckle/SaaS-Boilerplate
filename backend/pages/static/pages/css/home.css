@@ -76,7 +76,8 @@
 	transition: width 0.3s ease;
 }
 
-#features .nav ul li:hover:after {
+#features .nav ul li:hover:after,
+#features .nav ul li.active:after {
 	width: calc(100% + 30px);
 }
 
@@ -88,7 +89,8 @@
 }
 
 #features .nav ul li a:hover,
-#feature .nav ul li:hover a {
+#features .nav ul li:hover a,
+#features .nav ul li.active a {
 	color: var(--highlight-accent);
 	text-decoration: none;
 }
