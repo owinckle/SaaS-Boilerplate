@@ -1,3 +1,8 @@
+/*
+* Default styles.
+* Do not modify and instead edit "custom.css".
+*/
+
 .section__title {
 	font-size: 32px;
 	font-weight: 400;
@@ -156,6 +161,7 @@
 #features .feature img {
 	border-radius: 15px;
 	box-shadow: 2px 5px 15px 1px rgb(0 0 0 / 30%);
+	transition: height 0.3s ease;
 }
 
 #features .feature .feature__info .feature__name {

@@ -1,3 +1,8 @@
+/*
+* Default styles.
+* Do not modify and instead edit "custom.css".
+*/
+
 @media only screen and (max-width: 1750px) {
 	#features {
 		padding: 60px 250px;
@@ -69,7 +74,52 @@
 		top: 0;
 	}
 
+	#features {
+		padding: 60px 50px;
+	}
+
 	#hero .hero__app-sc {
 		height: 268px;
+	}
+
+	#features .nav {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 620px) {
+	#hero .hero__app-sc {
+		height: 200px;
+	}
+
+	#pricing .card {
+		flex-direction: column;
+	}
+
+	#pricing .card .card__pane {
+		border-right: none;
+		border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	}
+
+	#pricing .card .card__pane:last-child {
+		border-bottom: none;
+	}
+}
+
+@media only screen and (max-width: 460px) {
+	#hero .hero__app-sc {
+		height: 150px;
+	}
+}
+
+@media only screen and (max-width: 410px) {
+	#features .feature img {
+		height: 150px;
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	#hero .hero__app-sc {
+		height: 100px;
 	}
 }

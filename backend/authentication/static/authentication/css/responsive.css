@@ -1,3 +1,8 @@
+/*
+* Default styles.
+* Do not modify and instead edit "custom.css".
+*/
+
 @media only screen and (max-width: 740px) {
 	.card {
 		width: 80%;

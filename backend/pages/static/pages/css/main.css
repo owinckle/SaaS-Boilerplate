@@ -1,3 +1,8 @@
+/*
+* Default styles.
+* Do not modify and instead edit "custom.css".
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 :root {
@@ -134,10 +139,10 @@ body.light-theme {
 }
 
 .nav__burger {
+	position: absolute;
 	display: none;
 	z-index: 99999;
 	padding: 5px;
-	position: fixed;
 	top: 30px;
 	left: 25px;
 	transition: left 0.3s ease;
@@ -145,6 +150,7 @@ body.light-theme {
 
 .nav__burger.mobile-toggled {
 	left: 240px;
+	position: fixed;
 }
 
 .nav__burger .nav__burger__line {
