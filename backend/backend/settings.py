@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     # Apps
     "authentication",
     "pages",
+    "app"
 ]
 
 MIDDLEWARE = [
