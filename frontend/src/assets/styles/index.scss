@@ -1,3 +1,12 @@
+// Imports
+@use "variables" as v;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 body {
-	background: green;
+	font-family: v.$font-family;
+	font-size: v.$font-size;
+	letter-spacing: 1px;
+	margin: 0;
+	background: v.$bg;
+	color: v.$color;
 }
