@@ -11,6 +11,7 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="{% static 'pages/css/main.css' %}" />
+	<link rel="stylesheet" href="{% static 'pages/css/main-responsive.css' %}" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	{% block stylesheets %}{% endblock %}
@@ -21,12 +22,20 @@
 
 <body class="{% if light_theme %}light-theme{% endif %}">
 	<!-- Navbar -->
+	<div class="nav__burger">
+		<div class="nav__burger__line"></div>
+		<div class="nav__burger__line"></div>
+		<div class="nav__burger__line"></div>
+	</div>
 	<div class="nav-container">
-		<div class="site-title">{{ settings.SITE_NAME }}</div>
+		<a href="{% url 'pages-home' %}" class="site-title">{{ settings.SITE_NAME }}</a>
 		<nav>
 			<ul>
 				<li>
 					<a href="{% url 'pages-home' %}#" data-section="hero" class="active" />Home</a>
+				</li>
+				<li>
+					<a href="{% url 'pages-home' %}#about" data-section="about" />About</a>
 				</li>
 				<li>
 					<a href="{% url 'pages-home' %}#features" data-section="features" />Features</a>
@@ -40,14 +49,22 @@
 			</ul>
 		</nav>
 		<nav>
+			{% if user.is_authenticated %}
 			<ul>
 				<li>
-					<a class="button" href="javascript:void()" />Get started</a>
-				</li>
-				<li>
-					<a class="button" href="javascript:void()" />Log in</a>
+					<a class="button" href="">Dashboard</a>
 				</li>
 			</ul>
+			{% else %}
+			<ul>
+				<li>
+					<a class="button" href="{% url 'auth-login' %}" />Get started</a>
+				</li>
+				<li>
+					<a class="button" href="{% url 'auth-register' %}" />Log in</a>
+				</li>
+			</ul>
+			{% endif %}
 		</nav>
 	</div>
 	<!-- End Navbar -->
@@ -73,9 +90,15 @@
 			<a href="javascript:void()">Privacy policy</a>
 		</div>
 		<div class="footer__socials">
-			<img src="{% static 'pages/img/twitter.png' %}" alt="Twitter logo" />
-			<img src="{% static 'pages/img/instagram.png' %}" alt="Instagram logo" />
-			<img src="{% static 'pages/img/facebook.png' %}" alt="Facebook logo" />
+			<a href="https://twitter.com" target="_blank">
+				<img src="{% static 'pages/img/twitter.png' %}" alt="Twitter logo" />
+			</a>
+			<a href="https://instagram.com" target="_blank">
+				<img src="{% static 'pages/img/instagram.png' %}" alt="Instagram logo" />
+			</a>
+			<a href="https://facebook.com" target="_blank">
+				<img src="{% static 'pages/img/facebook.png' %}" alt="Facebook logo" />
+			</a>
 		</div>
 	</footer>
 

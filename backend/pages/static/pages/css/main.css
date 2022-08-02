@@ -76,6 +76,7 @@ body {
 	margin: 0;
 	padding: 0;
 	letter-spacing: 1px;
+	overflow-x: hidden;
 }
 
 body.light-theme {
@@ -85,6 +86,7 @@ body.light-theme {
 
 /* Navbar */
 .nav-container {
+	user-select: none;
 	position: fixed;
 	top: 0;
 	width: calc(100% - 250px * 2);
@@ -106,6 +108,8 @@ body.light-theme {
 
 .nav-container .site-title {
 	font-size: 28px;
+	text-decoration: none;
+	color: var(--font-color);
 }
 
 .nav-container nav ul {
@@ -127,6 +131,26 @@ body.light-theme {
 
 .nav-container nav ul a.active {
 	color: var(--highlight-accent);
+}
+
+.nav__burger {
+	display: none;
+	z-index: 99999;
+	padding: 5px;
+	position: fixed;
+	top: 30px;
+	left: 25px;
+	transition: left 0.3s ease;
+}
+
+.nav__burger.mobile-toggled {
+	left: 240px;
+}
+
+.nav__burger .nav__burger__line {
+	background: var(--font-color);
+	height: 2px;
+	width: 30px;
 }
 
 /* Button */
@@ -202,6 +226,22 @@ footer .footer__socials {
 
 footer .footer__socials {
 	flex-direction: row;
+}
+
+footer .footer__socials a {
+	background: rgba(0, 0, 0, 0.3);
+	height: 15px;
+	width: 15px;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	border-radius: 50%;
+	transition: background 0.3s ease !important;
+}
+
+footer .footer__socials a:hover {
+	left: 0;
+	background: rgba(255, 255, 255, 0.1);
 }
 
 footer .footer__socials img {

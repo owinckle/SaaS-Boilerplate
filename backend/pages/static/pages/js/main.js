@@ -48,3 +48,8 @@ $(window).scroll(() => {
 		}
 	});
 });
+
+$(".nav__burger").click(() => {
+	$(".nav-container").toggleClass("mobile-toggled");
+	$(".nav__burger").toggleClass("mobile-toggled");
+});

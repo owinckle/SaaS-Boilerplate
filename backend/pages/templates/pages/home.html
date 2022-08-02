@@ -8,6 +8,7 @@
 
 {% block content %}
 	<section id="hero">
+		<a href="#about" class="material-icons scroll-btn">keyboard_arrow_down</a>
 		<div class="hero__infos">
 			<h1>Quisque volutpat et purus non euismod</h1>
 			<h2>Lorem ipsum dolor sit amet, consectetur</h2>
@@ -15,7 +16,12 @@
 		</div>
 		<img class="hero__app-sc" src="{% static 'pages/img/hero-app.png' %}" />
 	</section>
-		
+	
+	<section id="about">
+		<h2 class="section__title">What is {{ settings.SITE_NAME }}?</h2>
+		<p class="section__description">{% lorem 1 %}</p>
+	</section>
+	
 	<section id="features">
 		<div class="nav">
 			<ul>
@@ -48,59 +54,67 @@
 				<div class="feature__name">Lorem ipsum dolor sit amet</div>
 				<p class="feature__details">Duis sapien ipsum, tempus tincidunt massa id, laoreet scelerisque sem. Nullam erat
 					dui.</p>
+				</div>
+				<img src="https://i.gyazo.com/6923ac6be18ce843b2d6cb2b4d399c60.png" />
 			</div>
-			<img src="https://i.gyazo.com/6923ac6be18ce843b2d6cb2b4d399c60.png" />
-		</div>
-		<div class="feature" id="f3">
-			<div class="feature__info">
-				<div class="feature__name">Lorem ipsum dolor sit amet</div>
+			<div class="feature" id="f3">
+				<div class="feature__info">
+					<div class="feature__name">Lorem ipsum dolor sit amet</div>
+					<p class="feature__details">Duis sapien ipsum, tempus tincidunt massa id, laoreet scelerisque sem. Nullam erat
+						dui.</p>
+					</div>
+					<img src="https://i.gyazo.com/6923ac6be18ce843b2d6cb2b4d399c60.png" />
+				</div>
+				<div class="feature" id="f4">
+					<div class="feature__info">
+						<div class="feature__name">Lorem ipsum dolor sit amet</div>
+						<p class="feature__details">Duis sapien ipsum, tempus tincidunt massa id, laoreet scelerisque sem. Nullam erat
+							dui.</p>
+						</div>
+						<img src="https://i.gyazo.com/6923ac6be18ce843b2d6cb2b4d399c60.png" />
+					</div>
+					<div class="feature" id="f5">
+						<div class="feature__info">
+							<div class="feature__name">Lorem ipsum dolor sit amet</div>
 				<p class="feature__details">Duis sapien ipsum, tempus tincidunt massa id, laoreet scelerisque sem. Nullam erat
 					dui.</p>
+				</div>
+				<img src="https://i.gyazo.com/6923ac6be18ce843b2d6cb2b4d399c60.png" />
 			</div>
-			<img src="https://i.gyazo.com/6923ac6be18ce843b2d6cb2b4d399c60.png" />
-		</div>
-		<div class="feature" id="f4">
-			<div class="feature__info">
-				<div class="feature__name">Lorem ipsum dolor sit amet</div>
-				<p class="feature__details">Duis sapien ipsum, tempus tincidunt massa id, laoreet scelerisque sem. Nullam erat
-					dui.</p>
-			</div>
-			<img src="https://i.gyazo.com/6923ac6be18ce843b2d6cb2b4d399c60.png" />
-		</div>
-		<div class="feature" id="f5">
-			<div class="feature__info">
-				<div class="feature__name">Lorem ipsum dolor sit amet</div>
-				<p class="feature__details">Duis sapien ipsum, tempus tincidunt massa id, laoreet scelerisque sem. Nullam erat
-					dui.</p>
-			</div>
-			<img src="https://i.gyazo.com/6923ac6be18ce843b2d6cb2b4d399c60.png" />
-		</div>
-	</section>
+		</section>
+		
 
-	<section id="pricing">
-		<div class="card">
-			<div class="card__pane">
-				<div class="pane__title">Free</div>
-				<div class="pane__price">0€</div>
-				<div class="pane__feature">
-					<div class="pane__feature__icon material-icons">done</div>
-					<div class="pane__feature__name">Unlimitted newsletters</div>
+		<section id="pricing">
+			<h2 class="section__title">Simple, one plan for everything</h2>
+			<p class="section__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+				nisi ut aliquip ex ea commodo consequat.</p>
+
+			<div class="flex-container">
+				<div class="card">
+					<div class="card__pane">
+						<div class="pane__title">Free</div>
+						<div class="pane__price">0€</div>
+						<div class="pane__feature">
+							<div class="pane__feature__icon material-icons">done</div>
+							<div class="pane__feature__name">Feature #1</div>
+						</div>
+						<div class="pane__feature">
+							<div class="pane__feature__icon material-icons">done</div>
+						<div class="pane__feature__name">Feature #2</div>
+					</div>
 				</div>
-				<div class="pane__feature">
-					<div class="pane__feature__icon material-icons">done</div>
-					<div class="pane__feature__name">Category management</div>
-				</div>
-			</div>
-			<div class="card__pane">
-				<div class="pane__title">Premium</div>
-				<div class="pane__price">19.99€</div>
-				<div class="pane__feature">
-					<div class="pane__feature__icon material-icons">done</div>
-					<div class="pane__feature__name">Unlimitted newsletters</div>
-				</div>
-				<div class="pane__feature">
-					<div class="pane__feature__icon material-icons">done</div>
-					<div class="pane__feature__name">Category management</div>
+				<div class="card__pane">
+					<div class="pane__title">Premium</div>
+					<div class="pane__price">19.99€</div>
+					<div class="pane__feature">
+						<div class="pane__feature__icon material-icons">done</div>
+						<div class="pane__feature__name">Feature #1</div>
+					</div>
+					<div class="pane__feature">
+						<div class="pane__feature__icon material-icons not-included">close</div>
+						<div class="pane__feature__name">Feature #2</div>
+					</div>
 				</div>
 			</div>
 		</div>
