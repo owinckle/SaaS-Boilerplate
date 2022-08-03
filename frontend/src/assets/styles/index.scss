@@ -1,5 +1,6 @@
 // Imports
 @use "variables" as v;
+@use "sidebar" as sidebar;
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 body {
@@ -9,4 +10,16 @@ body {
 	margin: 0;
 	background: v.$bg;
 	color: v.$color;
+	user-select: none
 }
+
+$main-content-padding: 25px;
+.main-content {
+	position: fixed;
+	width: calc(100vw - sidebar.$width - $main-content-padding * 2);
+	height: calc(100vh - $main-content-padding * 2);
+	left: sidebar.$width;
+	padding: $main-content-padding;
+}
+
+@import url(_resets.scss);

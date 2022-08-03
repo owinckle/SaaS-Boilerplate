@@ -3,9 +3,11 @@
 
 // Variables
 $background: v.$bg2;
-$padding: 25px;
+$padding: 20px;
 $width: calc(250px);
 $height: calc(100vh);
+$title-size: 22px;
+$body-gap: 10px;
 
 .sidebar {
 	position: fixed;
@@ -24,6 +26,7 @@ $height: calc(100vh);
 	.sidebar__head {
 		display: flex;
 		justify-content: center;
+		font-size: $title-size;
 
 		&:after {
 			content: "";
@@ -32,6 +35,48 @@ $height: calc(100vh);
 			background: v.$color-thin;
 			height: 1px;
 			bottom: 0;
+		}
+	}
+
+	.sidebar__body {
+		display: flex;
+		flex-direction: column;
+		gap: $body-gap;
+	}
+
+	.sidebar__group {
+		.sidebar__group__head {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			cursor: pointer;
+			margin-bottom: $body-gap;
+
+			.sidebar__group__name,
+			.sidebar__group__expand {
+				transition: color .3s ease;
+			}
+
+			&:hover,
+			&.active {
+				.sidebar__group__name,
+				.sidebar__group__expand {
+					color: v.$highlight-accent;
+				}
+			}
+		}
+
+		.sidebar__group__items {
+			display: flex;
+			flex-direction: column;
+			gap: $body-gap;
+			padding-left: $body-gap;
+			overflow: hidden;
+			height: 0;
+
+			&.expanded {
+				height: auto;
+			}
 		}
 	}
 }
